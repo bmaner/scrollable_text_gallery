@@ -1,16 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<style>
-		*{margin:0;padding:0} 
-		canvas{display: block}
-		#container{width: 100vw;height: 100vh}
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      canvas {
+        display: block;
+      }
+      #container {
+        width: 100vw;
+        height: 100vh;
+      }
+      body {
+        overscroll-behavior: none;
+      }
     </style>
-</head>
-<body>
-	<div id="container"></div>
-	<script src="js/app.js"></script>
-</body>
+  </head>
+  <body>
+    <div id="container"></div>
+    <div class="images" hidden>
+      <img src="./img/1.jpg" alt="" class="js-texture" />
+      <img src="./img/2.jpg" alt="" class="js-texture" />
+      <img src="./img/3.jpg" alt="" class="js-texture" />
+      <img src="./img/4.jpg" alt="" class="js-texture" />
+      <img src="./img/5.jpg" alt="" class="js-texture" />
+      <img src="./img/6.jpg" alt="" class="js-texture" />
+      <img src="./img/7.jpg" alt="" class="js-texture" />
+      <img src="./img/8.jpg" alt="" class="js-texture" />
+    </div>
+    <script src="js/app.js"></script>
+  </body>
 </html>

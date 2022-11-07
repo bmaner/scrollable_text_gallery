@@ -40243,7 +40243,17 @@ if (typeof window !== 'undefined') {
     window.__THREE__ = REVISION;
   }
 }
-},{}],"node_modules/three/examples/jsm/controls/OrbitControls.js":[function(require,module,exports) {
+},{}],"node_modules/three-msdf-text/build/bundle.js":[function(require,module,exports) {
+var define;
+!function(t,e){"object"==typeof exports&&"undefined"!=typeof module?e(exports,require("three")):"function"==typeof define&&define.amd?define(["exports","three"],e):e((t="undefined"!=typeof globalThis?globalThis:t||self).bundle={},t.three)}(this,(function(t,e){"use strict";function n(t,e){var n=Object.keys(t);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(t);e&&(r=r.filter((function(e){return Object.getOwnPropertyDescriptor(t,e).enumerable}))),n.push.apply(n,r)}return n}function r(t){for(var e=1;e<arguments.length;e++){var r=null!=arguments[e]?arguments[e]:{};e%2?n(Object(r),!0).forEach((function(e){s(t,e,r[e])})):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(r)):n(Object(r)).forEach((function(e){Object.defineProperty(t,e,Object.getOwnPropertyDescriptor(r,e))}))}return t}function i(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}function o(t,e){for(var n=0;n<e.length;n++){var r=e[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(t,r.key,r)}}function a(t,e,n){return e&&o(t.prototype,e),n&&o(t,n),Object.defineProperty(t,"prototype",{writable:!1}),t}function s(t,e,n){return e in t?Object.defineProperty(t,e,{value:n,enumerable:!0,configurable:!0,writable:!0}):t[e]=n,t}function l(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function");t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,writable:!0,configurable:!0}}),Object.defineProperty(t,"prototype",{writable:!1}),e&&f(t,e)}function u(t){return u=Object.setPrototypeOf?Object.getPrototypeOf.bind():function(t){return t.__proto__||Object.getPrototypeOf(t)},u(t)}function f(t,e){return f=Object.setPrototypeOf?Object.setPrototypeOf.bind():function(t,e){return t.__proto__=e,t},f(t,e)}function h(t,e){if(e&&("object"==typeof e||"function"==typeof e))return e;if(void 0!==e)throw new TypeError("Derived constructors may only return object or undefined");return function(t){if(void 0===t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return t}(t)}function d(t){var e=function(){if("undefined"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if("function"==typeof Proxy)return!0;try{return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],(function(){}))),!0}catch(t){return!1}}();return function(){var n,r=u(t);if(e){var i=u(this).constructor;n=Reflect.construct(r,arguments,i)}else n=r.apply(this,arguments);return h(this,n)}}var c={exports:{}};!function(t){var e=/\n/,n="\n",r=/\s/;function i(t,e,n,r){var i=t.indexOf(e,n);return-1===i||i>r?r:i}function o(t){return r.test(t)}function a(t,e,n,r){return{start:e,end:e+Math.min(r,n-e)}}t.exports=function(e,n){return t.exports.lines(e,n).map((function(t){return e.substring(t.start,t.end)})).join("\n")},t.exports.lines=function(t,r){if(0===(r=r||{}).width&&"nowrap"!==r.mode)return[];t=t||"";var s="number"==typeof r.width?r.width:Number.MAX_VALUE,l=Math.max(0,r.start||0),u="number"==typeof r.end?r.end:t.length,f=r.mode,h=r.measure||a;return"pre"===f?function(t,n,r,i,o){for(var a=[],s=r,l=r;l<i&&l<n.length;l++){var u=n.charAt(l),f=e.test(u);if(f||l===i-1){var h=t(n,s,f?l:l+1,o);a.push(h),s=l+1}}return a}(h,t,l,u,s):function(t,e,r,a,s,l){var u=[],f=s;"nowrap"===l&&(f=Number.MAX_VALUE);for(;r<a&&r<e.length;){for(var h=i(e,n,r,a);r<h&&o(e.charAt(r));)r++;var d=t(e,r,h,f),c=r+(d.end-d.start),p=c+n.length;if(c<h){for(;c>r&&!o(e.charAt(c));)c--;if(c===r)p>r+n.length&&p--,c=p;else for(p=c;c>r&&o(e.charAt(c-n.length));)c--}if(c>=r){var v=t(e,r,c,f);u.push(v)}r=p}return u}(h,t,l,u,s,f)}}(c);var p=c.exports,v=["x","e","a","o","n","s","r","c","u","m","v","w","z"],g=["m","w"],y=["H","I","N","E","F","K","L","T","U","V","W","X","Y","Z"],m="\t".charCodeAt(0),b=" ".charCodeAt(0),x=function(){function t(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};i(this,t),this.glyphs=[],this._measure=this.computeMetrics.bind(this),this.update(e)}return a(t,[{key:"width",get:function(){return this._width}},{key:"height",get:function(){return this._height}},{key:"descender",get:function(){return this._descender}},{key:"ascender",get:function(){return this._ascender}},{key:"xHeight",get:function(){return this._xHeight}},{key:"baseline",get:function(){return this._baseline}},{key:"capHeight",get:function(){return this._capHeight}},{key:"lineHeight",get:function(){return this._lineHeight}},{key:"linesTotal",get:function(){return this._linesTotal}},{key:"lettersTotal",get:function(){return this._lettersTotal}},{key:"wordsTotal",get:function(){return this._wordsTotal}},{key:"update",value:function(t){var e=this;if(t=Object.assign({measure:this._measure},t),this._options=t,this._options.tabSize=T(this._options.tabSize,4),!t.font)throw new Error("must provide a valid bitmap font");var n=this.glyphs,r=t.text||"",i=t.font;this._setupSpaceGlyphs(i);var o=p.lines(r,t),a=t.width||0,s=r.split(" ").filter((function(t){return"\n"!==t})).length,l=r.split("").filter((function(t){return"\n"!==t&&" "!==t})).length;n.length=0;var u=o.reduce((function(t,e){return Math.max(t,e.width,a)}),0),f=0,h=0,d=T(t.lineHeight,i.common.lineHeight),c=i.common.base,g=d-c,m=t.letterSpacing||0,x=d*o.length-g,_=function(t){if("center"===t)return 1;if("right"===t)return 2;return 0}(this._options.align);h-=x,this._width=u,this._height=x,this._descender=d-c,this._baseline=c,this._xHeight=function(t){for(var e=0;e<v.length;e++){var n=v[e].charCodeAt(0),r=I(t.chars,n);if(r>=0)return t.chars[r].height}return 0}(i),this._capHeight=function(t){for(var e=0;e<y.length;e++){var n=y[e].charCodeAt(0),r=I(t.chars,n);if(r>=0)return t.chars[r].height}return 0}(i),this._lineHeight=d,this._ascender=d-g-this._xHeight;var L=0,A=0;o.forEach((function(t,a){for(var c,p=t.start,v=t.end,g=t.width,y=r.slice(p,v).split(" ").filter((function(t){return""!==t})).length,x=r.slice(p,v).split(" ").join("").length,I=0,T=0,S=p;S<v;S++){var k=r.charCodeAt(S),O=e.getGlyph(i,k);if(O){c&&(f+=w(i,c.id,O.id));var F=f;1===_?F+=(u-g)/2:2===_&&(F+=u-g),n.push({position:[F,h],data:O,index:S,linesTotal:o.length,lineIndex:a,lineLettersTotal:x,lineLetterIndex:I,lineWordsTotal:y,lineWordIndex:T,wordsTotal:s,wordIndex:L,lettersTotal:l,letterIndex:A}),O.id===b&&c.id!==b&&(T++,L++),O.id!==b&&(I++,A++),f+=O.xadvance+m,c=O}}h+=d,f=0})),this._lettersTotal=l,this._wordsTotal=s,this._linesTotal=o.length}},{key:"getGlyph",value:function(t,e){var n=_(t,e);return n||(e===m?this._fallbackTabGlyph:e===b?this._fallbackSpaceGlyph:null)}},{key:"computeMetrics",value:function(t,e,n,r){var i,o,a=this._options.letterSpacing||0,s=this._options.font,l=0,u=0,f=0;if(!s.chars||0===s.chars.length)return{start:e,end:e,width:0};n=Math.min(t.length,n);for(var h=e;h<n;h++){var d=t.charCodeAt(h);if(i=this.getGlyph(s,d)){i.char=t[h],i.xoffset;var c=(l+=o?w(s,o.id,i.id):0)+i.xadvance+a,p=l+i.width;if(p>=r||c>=r)break;l=c,u=p,o=i}f++}return o&&(u+=o.xoffset),{start:e,end:e+f,width:u}}},{key:"_setupSpaceGlyphs",value:function(t){if(this._fallbackSpaceGlyph=null,this._fallbackTabGlyph=null,t.chars&&0!==t.chars.length){var e=_(t,b)||function(t){for(var e=0;e<g.length;e++){var n=g[e].charCodeAt(0),r=I(t.chars,n);if(r>=0)return t.chars[r]}return 0}(t)||t.chars[0],n=this._options.tabSize*e.xadvance;this._fallbackSpaceGlyph=e;var r=Object.assign({},e);this._fallbackTabGlyph=Object.assign(r,{x:0,y:0,xadvance:n,id:m,xoffset:0,yoffset:0,width:0,height:0})}}}]),t}();function _(t,e){if(!t.chars||0===t.chars.length)return null;var n=I(t.chars,e);return n>=0?t.chars[n]:null}function w(t,e,n){if(!t.kernings||0===t.kernings.length)return 0;for(var r=t.kernings,i=0;i<r.length;i++){var o=r[i];if(o.first===e&&o.second===n)return o.amount}return 0}function I(t,e,n){for(var r=n=n||0;r<t.length;r++)if(t[r].id===e)return r;return-1}function T(t,e){return"number"==typeof t?t:"number"==typeof e?e:0}var L={min:[0,0],max:[0,0]};function A(t){var e=t.length/2;L.min[0]=t[0],L.min[1]=t[1],L.max[0]=t[0],L.max[1]=t[1];for(var n=0;n<e;n++){var r=t[2*n+0],i=t[2*n+1];L.min[0]=Math.min(r,L.min[0]),L.min[1]=Math.min(i,L.min[1]),L.max[0]=Math.max(r,L.max[0]),L.max[1]=Math.max(i,L.max[1])}}var S={computeBox:function(t,e){return A(t),e.min.set(L.min[0],L.min[1],0),e.max.set(L.max[0],L.max[1],0),e},computeSphere:function(t,e){A(t);var n=L.min[0],r=L.min[1],i=L.max[0]-n,o=L.max[1]-r,a=Math.sqrt(i*i+o*o);e.center.set(n+i/2,r+o/2,0),e.radius=a/2}};var k={pages:function(t){var e=new Float32Array(4*t.length*1),n=0;return t.forEach((function(t){var r=t.data.page||0;e[n++]=r,e[n++]=r,e[n++]=r,e[n++]=r})),e},attributes:function(t,e,n,r,i){var o=new Float32Array(4*t.length*2),a=new Float32Array(4*t.length*2),s=new Float32Array(4*t.length*2),l=new Float32Array(4*t.length*2),u=0,f=0,h=0,d=0;return t.forEach((function(t){var c=t.data,p=c.x+c.width,v=c.y+c.height,g=c.x/e,y=c.y/n,m=p/e,b=v/n;r&&(y=(n-c.y)/n,b=(n-v)/n),o[u++]=g,o[u++]=y,o[u++]=g,o[u++]=b,o[u++]=m,o[u++]=b,o[u++]=m,o[u++]=y,a[d++]=t.position[0]/i.width,a[d++]=(t.position[1]+i.height)/i.height,a[d++]=t.position[0]/i.width,a[d++]=(t.position[1]+i.height+c.height)/i.height,a[d++]=(t.position[0]+c.width)/i.width,a[d++]=(t.position[1]+i.height+c.height)/i.height,a[d++]=(t.position[0]+c.width)/i.width,a[d++]=(t.position[1]+i.height)/i.height;var x=t.position[0]+c.xoffset,_=t.position[1]+c.yoffset,w=c.width,I=c.height;s[f++]=x,s[f++]=_,s[f++]=x,s[f++]=_+I,s[f++]=x+w,s[f++]=_+I,s[f++]=x+w,s[f++]=_,l[h++]=x+w/2,l[h++]=_+I/2,l[h++]=x+w/2,l[h++]=_+I/2,l[h++]=x+w/2,l[h++]=_+I/2,l[h++]=x+w/2,l[h++]=_+I/2})),{uvs:o,layoutUvs:a,positions:s,centers:l}},infos:function(t,e){for(var n=new Float32Array(4*t.length),r=new Float32Array(4*t.length),i=new Float32Array(4*t.length),o=new Float32Array(4*t.length),a=new Float32Array(4*t.length),s=new Float32Array(4*t.length),l=new Float32Array(4*t.length),u=new Float32Array(4*t.length),f=new Float32Array(4*t.length),h=new Float32Array(4*t.length),d=0,c=0,p=0,v=0,g=0,y=0,m=0,b=0,x=0,_=0,w=0;w<t.length;w++){var I=t[w];n[d++]=I.linesTotal,n[d++]=I.linesTotal,n[d++]=I.linesTotal,n[d++]=I.linesTotal,r[c++]=I.lineIndex,r[c++]=I.lineIndex,r[c++]=I.lineIndex,r[c++]=I.lineIndex,i[p++]=I.lineLettersTotal,i[p++]=I.lineLettersTotal,i[p++]=I.lineLettersTotal,i[p++]=I.lineLettersTotal,o[v++]=I.lineLetterIndex,o[v++]=I.lineLetterIndex,o[v++]=I.lineLetterIndex,o[v++]=I.lineLetterIndex,a[g++]=I.lineWordsTotal,a[g++]=I.lineWordsTotal,a[g++]=I.lineWordsTotal,a[g++]=I.lineWordsTotal,s[y++]=I.lineWordIndex,s[y++]=I.lineWordIndex,s[y++]=I.lineWordIndex,s[y++]=I.lineWordIndex,l[m++]=I.wordsTotal,l[m++]=I.wordsTotal,l[m++]=I.wordsTotal,l[m++]=I.wordsTotal,u[b++]=I.wordIndex,u[b++]=I.wordIndex,u[b++]=I.wordIndex,u[b++]=I.wordIndex,f[x++]=I.lettersTotal,f[x++]=I.lettersTotal,f[x++]=I.lettersTotal,f[x++]=I.lettersTotal,h[_++]=I.letterIndex,h[_++]=I.letterIndex,h[_++]=I.letterIndex,h[_++]=I.letterIndex}return{linesTotal:n,lineIndex:r,lineLettersTotal:i,lineLetterIndex:o,lineWordsTotal:a,lineWordIndex:s,wordsTotal:l,wordIndex:u,lettersTotal:f,letterIndex:h}}},O=Object.prototype.toString;function F(t){return!!t.constructor&&"function"==typeof t.constructor.isBuffer&&t.constructor.isBuffer(t)}var j=function(t){switch(t){case"int8":return Int8Array;case"int16":return Int16Array;case"int32":return Int32Array;case"uint8":return Uint8Array;case"uint16":return Uint16Array;case"uint32":return Uint32Array;case"float32":return Float32Array;case"float64":return Float64Array;case"array":return Array;case"uint8_clamped":return Uint8ClampedArray}},W=function(t){return t.BYTES_PER_ELEMENT&&"[object ArrayBuffer]"===O.call(t.buffer)||Array.isArray(t)}
+/*!
+   * Determine if an object is a Buffer
+   *
+   * @author   Feross Aboukhadijeh <https://feross.org>
+   * @license  MIT
+   */,B=function(t){return null!=t&&(F(t)||function(t){return"function"==typeof t.readFloatLE&&"function"==typeof t.slice&&F(t.slice(0,0))}(t)||!!t._isBuffer)},G=[0,2,3],P=[2,1,3],M=function(t){l(r,t);var n=d(r);function r(t){var e;return i(this,r),"string"==typeof t&&(t={text:t}),(e=n.call(this))._options=Object.assign({},t),e._layout=null,e._visibleGlyphs=[],e.update(e._options),e}return a(r,[{key:"layout",get:function(){return this._layout}},{key:"visibleGlyphs",get:function(){return this._visibleGlyphs}},{key:"update",value:function(t){if(t=this._validateOptions(t)){this._layout=function(t){return new x(t)}(t);var n=!1!==t.flipY,r=t.font,i=r.common.scaleW,o=r.common.scaleH,a=this._layout.glyphs.filter((function(t){var e=t.data;return e.width*e.height>0}));this._visibleGlyphs=a;var s=k.attributes(a,i,o,n,this._layout),l=k.infos(a,this._layout),u=function(t,e){t&&(W(t)||B(t))||(e=t||{},t=null);for(var n="string"==typeof(e="number"==typeof e?{count:e}:e||{}).type?e.type:"uint16",r="number"==typeof e.count?e.count:1,i=e.start||0,o=!1!==e.clockwise?G:P,a=o[0],s=o[1],l=o[2],u=6*r,f=t||new(j(n))(u),h=0,d=0;h<u;h+=6,d+=4){var c=h+i;f[c+0]=d+0,f[c+1]=d+1,f[c+2]=d+2,f[c+3]=d+a,f[c+4]=d+s,f[c+5]=d+l}return f}([],{clockwise:!0,type:"uint16",count:a.length});if(this.setIndex(u),this.setAttribute("position",new e.BufferAttribute(s.positions,2)),this.setAttribute("center",new e.BufferAttribute(s.centers,2)),this.setAttribute("uv",new e.BufferAttribute(s.uvs,2)),this.setAttribute("layoutUv",new e.BufferAttribute(s.layoutUvs,2)),this.setAttribute("lineIndex",new e.BufferAttribute(l.lineIndex,1)),this.setAttribute("lineLettersTotal",new e.BufferAttribute(l.lineLettersTotal,1)),this.setAttribute("lineLetterIndex",new e.BufferAttribute(l.lineLetterIndex,1)),this.setAttribute("lineWordsTotal",new e.BufferAttribute(l.lineWordsTotal,1)),this.setAttribute("lineWordIndex",new e.BufferAttribute(l.lineWordIndex,1)),this.setAttribute("wordIndex",new e.BufferAttribute(l.wordIndex,1)),this.setAttribute("letterIndex",new e.BufferAttribute(l.letterIndex,1)),!t.multipage&&"page"in this.attributes)this.deleteAttribute("page");else if(t.multipage){var f=k.pages(a);this.setAttribute("page",new e.BufferAttribute(f,1))}}}},{key:"computeBoundingSphere",value:function(){null===this.boundingSphere&&(this.boundingSphere=new e.Sphere);var t=this.attributes.position.array,n=this.attributes.position.itemSize;if(!t||!n||t.length<2)return this.boundingSphere.radius=0,void this.boundingSphere.center.set(0,0,0);S.computeSphere(t,this.boundingSphere),isNaN(this.boundingSphere.radius)&&console.error('BufferGeometry.computeBoundingSphere(): Computed radius is NaN. The "position" attribute is likely to have NaN values.')}},{key:"computeBoundingBox",value:function(){null===this.boundingBox&&(this.boundingBox=new e.Box3);var t=this.boundingBox,n=this.attributes.position.array,r=this.attributes.position.itemSize;if(n&&r&&!(n.length<2))return S.computeBox(n,t);t.makeEmpty()}},{key:"_validateOptions",value:function(t){if("string"==typeof t&&(t={text:t}),!(t=Object.assign({},this._options,t)).font)throw new TypeError("must specify a { font } in options");return t}}]),r}(e.BufferGeometry),C={common:{uOpacity:{value:1},uColor:{value:new e.Color("#ffffff")},uMap:{value:null}},rendering:{uThreshold:{value:.05},uAlphaTest:{value:.01}},strokes:{uStrokeColor:{value:new e.Color("#ff0000")},uStrokeOutsetWidth:{value:0},uStrokeInsetWidth:{value:.3}}},D={three_msdf_attributes:"#define GLSLIFY 1\nattribute vec2 layoutUv;attribute float lineIndex;attribute float lineLettersTotal;attribute float lineLetterIndex;attribute float lineWordsTotal;attribute float lineWordIndex;attribute float wordIndex;attribute float letterIndex;",three_msdf_varyings:"#define GLSLIFY 1\nvarying vec2 vUv;varying vec2 vLayoutUv;varying vec3 vViewPosition;varying vec3 vNormal;varying float vLineIndex;varying float vLineLettersTotal;varying float vLineLetterIndex;varying float vLineWordsTotal;varying float vLineWordIndex;varying float vWordIndex;varying float vLetterIndex;",three_msdf_vertex:"#define GLSLIFY 1\nvec4 mvPosition=vec4(position,1.0);mvPosition=modelViewMatrix*mvPosition;gl_Position=projectionMatrix*mvPosition;vUv=uv;vLayoutUv=layoutUv;vViewPosition=-mvPosition.xyz;vNormal=normal;vLineIndex=lineIndex;vLineLettersTotal=lineLettersTotal;vLineLetterIndex=lineLetterIndex;vLineWordsTotal=lineWordsTotal;vLineWordIndex=lineWordIndex;vWordIndex=wordIndex;vLetterIndex=letterIndex;",three_msdf_median:"#define GLSLIFY 1\nfloat median(float r,float g,float b){return max(min(r,g),min(max(r,g),b));}",three_msdf_common:"#define GLSLIFY 1\nvec3 s=texture2D(uMap,vUv).rgb;float sigDist=median(s.r,s.g,s.b)-0.5;float afwidth=1.4142135623730951/2.0;\n#ifdef IS_SMALL\nfloat alpha=smoothstep(uThreshold-afwidth,uThreshold+afwidth,sigDist);\n#else\nfloat alpha=clamp(sigDist/fwidth(sigDist)+0.5,0.0,1.0);\n#endif\n",three_msdf_common_uniforms:"#define GLSLIFY 1\nuniform float uOpacity;uniform float uThreshold;uniform float uAlphaTest;uniform vec3 uColor;uniform sampler2D uMap;",three_msdf_strokes:"#define GLSLIFY 1\nfloat sigDistOutset=sigDist+uStrokeOutsetWidth*0.5;float sigDistInset=sigDist-uStrokeInsetWidth*0.5;\n#ifdef IS_SMALL\nfloat outset=smoothstep(uThreshold-afwidth,uThreshold+afwidth,sigDistOutset);float inset=1.0-smoothstep(uThreshold-afwidth,uThreshold+afwidth,sigDistInset);\n#else\nfloat outset=clamp(sigDistOutset/fwidth(sigDistOutset)+0.5,0.0,1.0);float inset=1.0-clamp(sigDistInset/fwidth(sigDistInset)+0.5,0.0,1.0);\n#endif\nfloat border=outset*inset;",three_msdf_strokes_uniforms:"#define GLSLIFY 1\nuniform vec3 uStrokeColor;uniform float uStrokeOutsetWidth;uniform float uStrokeInsetWidth;",three_msdf_alpha_test:"#define GLSLIFY 1\nif(alpha<uAlphaTest)discard;",three_msdf_common_output:"#define GLSLIFY 1\nvec4 filledFragColor=vec4(uColor,uOpacity*alpha);gl_FragColor=filledFragColor;",three_msdf_strokes_output:"#define GLSLIFY 1\nvec4 strokedFragColor=vec4(uStrokeColor,uOpacity*border);gl_FragColor=strokedFragColor;"};for(var E in D)e.ShaderChunk[E]=D[E];var U={side:e.FrontSide,transparent:!0,defines:{IS_SMALL:!1},extensions:{derivatives:!0},uniforms:r(r(r({},C.common),C.rendering),C.strokes),vertexShader:"#define GLSLIFY 1\n#include <three_msdf_attributes>\n#include <three_msdf_varyings>\nvoid main(){\n#include <three_msdf_vertex>\n}",fragmentShader:"#define GLSLIFY 1\nvarying vec2 vUv;\n#include <three_msdf_common_uniforms>\n#include <three_msdf_strokes_uniforms>\n#include <three_msdf_median>\nvoid main(){\n#include <three_msdf_common>\n#include <three_msdf_strokes>\n#include <three_msdf_alpha_test>\n#include <three_msdf_common_output>\n}"},Y=function(t){l(n,t);var e=d(n);function n(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return i(this,n),t=Object.assign(U,t),e.call(this,t)}return a(n)}(e.ShaderMaterial);t.MSDFTextGeometry=M,t.MSDFTextMaterial=Y,t.uniforms=C,Object.defineProperty(t,"__esModule",{value:!0})}));
+
+},{"three":"node_modules/three/build/three.module.js"}],"node_modules/three/examples/jsm/controls/OrbitControls.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -41139,7 +41149,7 @@ var MapControls = /*#__PURE__*/function (_OrbitControls) {
 
 exports.MapControls = MapControls;
 },{"three":"node_modules/three/build/three.module.js"}],"js/shader/fragment.glsl":[function(require,module,exports) {
-module.exports = "#define GLSLIFY 1\nvarying vec2 vUv;\nvoid main()\t{\n\t// vec2 newUV = (vUv - vec2(0.5))*resolution.zw + vec2(0.5);\n\tgl_FragColor = vec4(vUv,0.0,1.);\n}";
+module.exports = "#define GLSLIFY 1\nvarying vec2 vUv;\nuniform sampler2D uTexture;\nvoid main()\t{\n\tgl_FragColor = texture2D(uTexture, vUv);\n}";
 },{}],"js/shader/vertex.glsl":[function(require,module,exports) {
 module.exports = "#define GLSLIFY 1\nvarying vec2 vUv;\nvoid main() {\n  vUv = uv;\n  gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );\n}";
 },{}],"node_modules/dat.gui/build/dat.gui.module.js":[function(require,module,exports) {
@@ -44050,6 +44060,10 @@ var index = {
 };
 var _default = index;
 exports.default = _default;
+},{}],"node_modules/virtual-scroll/lib/virtualscroll.js":[function(require,module,exports) {
+var define;
+!function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):(e||self).virtualScroll=t()}(this,function(){var e=0;function t(t){return"__private_"+e+++"_"+t}function i(e,t){if(!Object.prototype.hasOwnProperty.call(e,t))throw new TypeError("attempted to use private field on non-instance");return e}function n(){}n.prototype={on:function(e,t,i){var n=this.e||(this.e={});return(n[e]||(n[e]=[])).push({fn:t,ctx:i}),this},once:function(e,t,i){var n=this;function o(){n.off(e,o),t.apply(i,arguments)}return o._=t,this.on(e,o,i)},emit:function(e){for(var t=[].slice.call(arguments,1),i=((this.e||(this.e={}))[e]||[]).slice(),n=0,o=i.length;n<o;n++)i[n].fn.apply(i[n].ctx,t);return this},off:function(e,t){var i=this.e||(this.e={}),n=i[e],o=[];if(n&&t)for(var s=0,h=n.length;s<h;s++)n[s].fn!==t&&n[s].fn._!==t&&o.push(n[s]);return o.length?i[e]=o:delete i[e],this}};var o=n;o.TinyEmitter=n;var s,h="virtualscroll",r=t("options"),a=t("el"),l=t("emitter"),u=t("event"),c=t("touchStart"),d=t("bodyTouchAction");return function(){function e(e){var t=this;Object.defineProperty(this,r,{writable:!0,value:void 0}),Object.defineProperty(this,a,{writable:!0,value:void 0}),Object.defineProperty(this,l,{writable:!0,value:void 0}),Object.defineProperty(this,u,{writable:!0,value:void 0}),Object.defineProperty(this,c,{writable:!0,value:void 0}),Object.defineProperty(this,d,{writable:!0,value:void 0}),this._onWheel=function(e){var n=i(t,r)[r],o=i(t,u)[u];o.deltaX=e.wheelDeltaX||-1*e.deltaX,o.deltaY=e.wheelDeltaY||-1*e.deltaY,s.isFirefox&&1===e.deltaMode&&(o.deltaX*=n.firefoxMultiplier,o.deltaY*=n.firefoxMultiplier),o.deltaX*=n.mouseMultiplier,o.deltaY*=n.mouseMultiplier,t._notify(e)},this._onMouseWheel=function(e){var n=i(t,u)[u];n.deltaX=e.wheelDeltaX?e.wheelDeltaX:0,n.deltaY=e.wheelDeltaY?e.wheelDeltaY:e.wheelDelta,t._notify(e)},this._onTouchStart=function(e){var n=e.targetTouches?e.targetTouches[0]:e;i(t,c)[c].x=n.pageX,i(t,c)[c].y=n.pageY},this._onTouchMove=function(e){var n=i(t,r)[r];n.preventTouch&&!e.target.classList.contains(n.unpreventTouchClass)&&e.preventDefault();var o=i(t,u)[u],s=e.targetTouches?e.targetTouches[0]:e;o.deltaX=(s.pageX-i(t,c)[c].x)*n.touchMultiplier,o.deltaY=(s.pageY-i(t,c)[c].y)*n.touchMultiplier,i(t,c)[c].x=s.pageX,i(t,c)[c].y=s.pageY,t._notify(e)},this._onKeyDown=function(e){var n=i(t,u)[u];n.deltaX=n.deltaY=0;var o=window.innerHeight-40;switch(e.keyCode){case 37:case 38:n.deltaY=i(t,r)[r].keyStep;break;case 39:case 40:n.deltaY=-i(t,r)[r].keyStep;break;case 32:n.deltaY=o*(e.shiftKey?1:-1);break;default:return}t._notify(e)},i(this,a)[a]=window,e&&e.el&&(i(this,a)[a]=e.el,delete e.el),s||(s={hasWheelEvent:"onwheel"in document,hasMouseWheelEvent:"onmousewheel"in document,hasTouch:"ontouchstart"in document,hasTouchWin:navigator.msMaxTouchPoints&&navigator.msMaxTouchPoints>1,hasPointer:!!window.navigator.msPointerEnabled,hasKeyDown:"onkeydown"in document,isFirefox:navigator.userAgent.indexOf("Firefox")>-1}),i(this,r)[r]=Object.assign({mouseMultiplier:1,touchMultiplier:2,firefoxMultiplier:15,keyStep:120,preventTouch:!1,unpreventTouchClass:"vs-touchmove-allowed",useKeyboard:!0,useTouch:!0},e),i(this,l)[l]=new o,i(this,u)[u]={y:0,x:0,deltaX:0,deltaY:0},i(this,c)[c]={x:null,y:null},i(this,d)[d]=null,void 0!==i(this,r)[r].passive&&(this.listenerOptions={passive:i(this,r)[r].passive})}var t=e.prototype;return t._notify=function(e){var t=i(this,u)[u];t.x+=t.deltaX,t.y+=t.deltaY,i(this,l)[l].emit(h,{x:t.x,y:t.y,deltaX:t.deltaX,deltaY:t.deltaY,originalEvent:e})},t._bind=function(){s.hasWheelEvent&&i(this,a)[a].addEventListener("wheel",this._onWheel,this.listenerOptions),s.hasMouseWheelEvent&&i(this,a)[a].addEventListener("mousewheel",this._onMouseWheel,this.listenerOptions),s.hasTouch&&i(this,r)[r].useTouch&&(i(this,a)[a].addEventListener("touchstart",this._onTouchStart,this.listenerOptions),i(this,a)[a].addEventListener("touchmove",this._onTouchMove,this.listenerOptions)),s.hasPointer&&s.hasTouchWin&&(i(this,d)[d]=document.body.style.msTouchAction,document.body.style.msTouchAction="none",i(this,a)[a].addEventListener("MSPointerDown",this._onTouchStart,!0),i(this,a)[a].addEventListener("MSPointerMove",this._onTouchMove,!0)),s.hasKeyDown&&i(this,r)[r].useKeyboard&&document.addEventListener("keydown",this._onKeyDown)},t._unbind=function(){s.hasWheelEvent&&i(this,a)[a].removeEventListener("wheel",this._onWheel),s.hasMouseWheelEvent&&i(this,a)[a].removeEventListener("mousewheel",this._onMouseWheel),s.hasTouch&&(i(this,a)[a].removeEventListener("touchstart",this._onTouchStart),i(this,a)[a].removeEventListener("touchmove",this._onTouchMove)),s.hasPointer&&s.hasTouchWin&&(document.body.style.msTouchAction=i(this,d)[d],i(this,a)[a].removeEventListener("MSPointerDown",this._onTouchStart,!0),i(this,a)[a].removeEventListener("MSPointerMove",this._onTouchMove,!0)),s.hasKeyDown&&i(this,r)[r].useKeyboard&&document.removeEventListener("keydown",this._onKeyDown)},t.on=function(e,t){i(this,l)[l].on(h,e,t);var n=i(this,l)[l].e;n&&n[h]&&1===n[h].length&&this._bind()},t.off=function(e,t){i(this,l)[l].off(h,e,t);var n=i(this,l)[l].e;(!n[h]||n[h].length<=0)&&this._unbind()},t.destroy=function(){i(this,l)[l].off(),this._unbind()},e}()});
+
 },{}],"node_modules/gsap/gsap-core.js":[function(require,module,exports) {
 "use strict";
 
@@ -50274,7 +50288,1111 @@ TweenMaxWithCSS = gsapWithCSS.core.Tween;
 
 exports.TweenMax = TweenMaxWithCSS;
 exports.default = exports.gsap = gsapWithCSS;
-},{"./gsap-core.js":"node_modules/gsap/gsap-core.js","./CSSPlugin.js":"node_modules/gsap/CSSPlugin.js"}],"js/app.js":[function(require,module,exports) {
+},{"./gsap-core.js":"node_modules/gsap/gsap-core.js","./CSSPlugin.js":"node_modules/gsap/CSSPlugin.js"}],"font/GmarketSansTTFBold-msdf.json":[function(require,module,exports) {
+module.exports = {
+  "pages": ["GmarketSansTTFBold.png"],
+  "chars": [{
+    "id": 87,
+    "index": 56,
+    "char": "W",
+    "width": 51,
+    "height": 38,
+    "xoffset": -1,
+    "yoffset": 6,
+    "xadvance": 49,
+    "chnl": 15,
+    "x": 0,
+    "y": 0,
+    "page": 0
+  }, {
+    "id": 81,
+    "index": 50,
+    "char": "Q",
+    "width": 41,
+    "height": 45,
+    "xoffset": 0,
+    "yoffset": 5,
+    "xadvance": 40,
+    "chnl": 15,
+    "x": 52,
+    "y": 0,
+    "page": 0
+  }, {
+    "id": 79,
+    "index": 48,
+    "char": "O",
+    "width": 41,
+    "height": 40,
+    "xoffset": 0,
+    "yoffset": 5,
+    "xadvance": 40,
+    "chnl": 15,
+    "x": 0,
+    "y": 39,
+    "page": 0
+  }, {
+    "id": 67,
+    "index": 36,
+    "char": "C",
+    "width": 40,
+    "height": 40,
+    "xoffset": 0,
+    "yoffset": 5,
+    "xadvance": 39,
+    "chnl": 15,
+    "x": 94,
+    "y": 0,
+    "page": 0
+  }, {
+    "id": 71,
+    "index": 40,
+    "char": "G",
+    "width": 40,
+    "height": 40,
+    "xoffset": 0,
+    "yoffset": 5,
+    "xadvance": 39,
+    "chnl": 15,
+    "x": 135,
+    "y": 0,
+    "page": 0
+  }, {
+    "id": 77,
+    "index": 46,
+    "char": "M",
+    "width": 40,
+    "height": 38,
+    "xoffset": 1,
+    "yoffset": 6,
+    "xadvance": 42,
+    "chnl": 15,
+    "x": 176,
+    "y": 0,
+    "page": 0
+  }, {
+    "id": 83,
+    "index": 52,
+    "char": "S",
+    "width": 33,
+    "height": 40,
+    "xoffset": -1,
+    "yoffset": 5,
+    "xadvance": 32,
+    "chnl": 15,
+    "x": 217,
+    "y": 0,
+    "page": 0
+  }, {
+    "id": 74,
+    "index": 43,
+    "char": "J",
+    "width": 31,
+    "height": 39,
+    "xoffset": -1,
+    "yoffset": 6,
+    "xadvance": 30,
+    "chnl": 15,
+    "x": 176,
+    "y": 39,
+    "page": 0
+  }, {
+    "id": 78,
+    "index": 47,
+    "char": "N",
+    "width": 35,
+    "height": 39,
+    "xoffset": 1,
+    "yoffset": 5,
+    "xadvance": 37,
+    "chnl": 15,
+    "x": 208,
+    "y": 41,
+    "page": 0
+  }, {
+    "id": 85,
+    "index": 54,
+    "char": "U",
+    "width": 35,
+    "height": 39,
+    "xoffset": 1,
+    "yoffset": 6,
+    "xadvance": 37,
+    "chnl": 15,
+    "x": 94,
+    "y": 41,
+    "page": 0
+  }, {
+    "id": 86,
+    "index": 55,
+    "char": "V",
+    "width": 39,
+    "height": 38,
+    "xoffset": -2,
+    "yoffset": 6,
+    "xadvance": 36,
+    "chnl": 15,
+    "x": 130,
+    "y": 41,
+    "page": 0
+  }, {
+    "id": 65,
+    "index": 34,
+    "char": "A",
+    "width": 38,
+    "height": 38,
+    "xoffset": -2,
+    "yoffset": 6,
+    "xadvance": 35,
+    "chnl": 15,
+    "x": 42,
+    "y": 46,
+    "page": 0
+  }, {
+    "id": 66,
+    "index": 35,
+    "char": "B",
+    "width": 32,
+    "height": 38,
+    "xoffset": 1,
+    "yoffset": 6,
+    "xadvance": 33,
+    "chnl": 15,
+    "x": 170,
+    "y": 79,
+    "page": 0
+  }, {
+    "id": 68,
+    "index": 37,
+    "char": "D",
+    "width": 36,
+    "height": 38,
+    "xoffset": 1,
+    "yoffset": 6,
+    "xadvance": 36,
+    "chnl": 15,
+    "x": 130,
+    "y": 80,
+    "page": 0
+  }, {
+    "id": 69,
+    "index": 38,
+    "char": "E",
+    "width": 30,
+    "height": 38,
+    "xoffset": 1,
+    "yoffset": 6,
+    "xadvance": 31,
+    "chnl": 15,
+    "x": 0,
+    "y": 80,
+    "page": 0
+  }, {
+    "id": 70,
+    "index": 39,
+    "char": "F",
+    "width": 29,
+    "height": 38,
+    "xoffset": 1,
+    "yoffset": 6,
+    "xadvance": 29,
+    "chnl": 15,
+    "x": 81,
+    "y": 81,
+    "page": 0
+  }, {
+    "id": 72,
+    "index": 41,
+    "char": "H",
+    "width": 34,
+    "height": 38,
+    "xoffset": 1,
+    "yoffset": 6,
+    "xadvance": 36,
+    "chnl": 15,
+    "x": 31,
+    "y": 85,
+    "page": 0
+  }, {
+    "id": 73,
+    "index": 42,
+    "char": "I",
+    "width": 12,
+    "height": 38,
+    "xoffset": 1,
+    "yoffset": 6,
+    "xadvance": 14,
+    "chnl": 15,
+    "x": 244,
+    "y": 41,
+    "page": 0
+  }, {
+    "id": 75,
+    "index": 44,
+    "char": "K",
+    "width": 35,
+    "height": 38,
+    "xoffset": 1,
+    "yoffset": 6,
+    "xadvance": 35,
+    "chnl": 15,
+    "x": 203,
+    "y": 81,
+    "page": 0
+  }, {
+    "id": 76,
+    "index": 45,
+    "char": "L",
+    "width": 29,
+    "height": 38,
+    "xoffset": 1,
+    "yoffset": 6,
+    "xadvance": 29,
+    "chnl": 15,
+    "x": 0,
+    "y": 119,
+    "page": 0
+  }, {
+    "id": 80,
+    "index": 49,
+    "char": "P",
+    "width": 31,
+    "height": 38,
+    "xoffset": 1,
+    "yoffset": 6,
+    "xadvance": 31,
+    "chnl": 15,
+    "x": 167,
+    "y": 118,
+    "page": 0
+  }, {
+    "id": 82,
+    "index": 51,
+    "char": "R",
+    "width": 33,
+    "height": 38,
+    "xoffset": 1,
+    "yoffset": 6,
+    "xadvance": 33,
+    "chnl": 15,
+    "x": 111,
+    "y": 119,
+    "page": 0
+  }, {
+    "id": 84,
+    "index": 53,
+    "char": "T",
+    "width": 34,
+    "height": 38,
+    "xoffset": -1,
+    "yoffset": 6,
+    "xadvance": 32,
+    "chnl": 15,
+    "x": 66,
+    "y": 120,
+    "page": 0
+  }, {
+    "id": 88,
+    "index": 57,
+    "char": "X",
+    "width": 37,
+    "height": 38,
+    "xoffset": -2,
+    "yoffset": 6,
+    "xadvance": 33,
+    "chnl": 15,
+    "x": 199,
+    "y": 120,
+    "page": 0
+  }, {
+    "id": 89,
+    "index": 58,
+    "char": "Y",
+    "width": 37,
+    "height": 38,
+    "xoffset": -1,
+    "yoffset": 6,
+    "xadvance": 34,
+    "chnl": 15,
+    "x": 145,
+    "y": 157,
+    "page": 0
+  }, {
+    "id": 90,
+    "index": 59,
+    "char": "Z",
+    "width": 32,
+    "height": 38,
+    "xoffset": 0,
+    "yoffset": 6,
+    "xadvance": 31,
+    "chnl": 15,
+    "x": 30,
+    "y": 124,
+    "page": 0
+  }, {
+    "id": 32,
+    "index": 1,
+    "char": " ",
+    "width": 0,
+    "height": 0,
+    "xoffset": -2,
+    "yoffset": 36,
+    "xadvance": 12,
+    "chnl": 15,
+    "x": 30,
+    "y": 119,
+    "page": 0
+  }],
+  "info": {
+    "face": "GmarketSansTTFBold",
+    "size": 42,
+    "bold": 0,
+    "italic": 0,
+    "charset": ["A", " ", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
+    "unicode": 1,
+    "stretchH": 100,
+    "smooth": 1,
+    "aa": 1,
+    "padding": [2, 2, 2, 2],
+    "spacing": [0, 0]
+  },
+  "common": {
+    "lineHeight": 48,
+    "base": 36,
+    "scaleW": 256,
+    "scaleH": 256,
+    "pages": 1,
+    "packed": 0,
+    "alphaChnl": 0,
+    "redChnl": 0,
+    "greenChnl": 0,
+    "blueChnl": 0
+  },
+  "distanceField": {
+    "fieldType": "msdf",
+    "distanceRange": 4
+  },
+  "kernings": [{
+    "first": 65,
+    "second": 65,
+    "amount": 1
+  }, {
+    "first": 65,
+    "second": 67,
+    "amount": -2
+  }, {
+    "first": 65,
+    "second": 71,
+    "amount": -2
+  }, {
+    "first": 65,
+    "second": 79,
+    "amount": -2
+  }, {
+    "first": 65,
+    "second": 81,
+    "amount": -2
+  }, {
+    "first": 65,
+    "second": 83,
+    "amount": -1
+  }, {
+    "first": 65,
+    "second": 84,
+    "amount": -5
+  }, {
+    "first": 65,
+    "second": 85,
+    "amount": -2
+  }, {
+    "first": 65,
+    "second": 86,
+    "amount": -6
+  }, {
+    "first": 65,
+    "second": 87,
+    "amount": -5
+  }, {
+    "first": 65,
+    "second": 88,
+    "amount": 0
+  }, {
+    "first": 65,
+    "second": 89,
+    "amount": -7
+  }, {
+    "first": 66,
+    "second": 65,
+    "amount": -1
+  }, {
+    "first": 66,
+    "second": 84,
+    "amount": -1
+  }, {
+    "first": 66,
+    "second": 85,
+    "amount": -1
+  }, {
+    "first": 66,
+    "second": 86,
+    "amount": -2
+  }, {
+    "first": 66,
+    "second": 87,
+    "amount": -1
+  }, {
+    "first": 66,
+    "second": 88,
+    "amount": -2
+  }, {
+    "first": 66,
+    "second": 89,
+    "amount": -2
+  }, {
+    "first": 67,
+    "second": 65,
+    "amount": -2
+  }, {
+    "first": 67,
+    "second": 84,
+    "amount": -2
+  }, {
+    "first": 67,
+    "second": 86,
+    "amount": -2
+  }, {
+    "first": 67,
+    "second": 87,
+    "amount": -1
+  }, {
+    "first": 67,
+    "second": 88,
+    "amount": -3
+  }, {
+    "first": 67,
+    "second": 89,
+    "amount": -3
+  }, {
+    "first": 67,
+    "second": 90,
+    "amount": 0
+  }, {
+    "first": 68,
+    "second": 65,
+    "amount": -2
+  }, {
+    "first": 68,
+    "second": 84,
+    "amount": -2
+  }, {
+    "first": 68,
+    "second": 86,
+    "amount": -2
+  }, {
+    "first": 68,
+    "second": 87,
+    "amount": -1
+  }, {
+    "first": 68,
+    "second": 88,
+    "amount": -3
+  }, {
+    "first": 68,
+    "second": 89,
+    "amount": -3
+  }, {
+    "first": 68,
+    "second": 90,
+    "amount": 0
+  }, {
+    "first": 69,
+    "second": 67,
+    "amount": -1
+  }, {
+    "first": 69,
+    "second": 71,
+    "amount": -1
+  }, {
+    "first": 69,
+    "second": 79,
+    "amount": -1
+  }, {
+    "first": 69,
+    "second": 81,
+    "amount": -1
+  }, {
+    "first": 70,
+    "second": 65,
+    "amount": -3
+  }, {
+    "first": 70,
+    "second": 74,
+    "amount": -1
+  }, {
+    "first": 70,
+    "second": 84,
+    "amount": 1
+  }, {
+    "first": 70,
+    "second": 86,
+    "amount": 1
+  }, {
+    "first": 70,
+    "second": 87,
+    "amount": 1
+  }, {
+    "first": 70,
+    "second": 88,
+    "amount": 1
+  }, {
+    "first": 70,
+    "second": 89,
+    "amount": 1
+  }, {
+    "first": 71,
+    "second": 65,
+    "amount": -2
+  }, {
+    "first": 71,
+    "second": 84,
+    "amount": -2
+  }, {
+    "first": 71,
+    "second": 86,
+    "amount": -2
+  }, {
+    "first": 71,
+    "second": 87,
+    "amount": -1
+  }, {
+    "first": 71,
+    "second": 88,
+    "amount": -3
+  }, {
+    "first": 71,
+    "second": 89,
+    "amount": -3
+  }, {
+    "first": 71,
+    "second": 90,
+    "amount": 0
+  }, {
+    "first": 74,
+    "second": 65,
+    "amount": -2
+  }, {
+    "first": 74,
+    "second": 88,
+    "amount": 0
+  }, {
+    "first": 75,
+    "second": 65,
+    "amount": 1
+  }, {
+    "first": 75,
+    "second": 67,
+    "amount": -4
+  }, {
+    "first": 75,
+    "second": 71,
+    "amount": -4
+  }, {
+    "first": 75,
+    "second": 74,
+    "amount": -1
+  }, {
+    "first": 75,
+    "second": 79,
+    "amount": -4
+  }, {
+    "first": 75,
+    "second": 81,
+    "amount": -4
+  }, {
+    "first": 75,
+    "second": 83,
+    "amount": -2
+  }, {
+    "first": 75,
+    "second": 85,
+    "amount": -1
+  }, {
+    "first": 75,
+    "second": 88,
+    "amount": 1
+  }, {
+    "first": 76,
+    "second": 65,
+    "amount": 1
+  }, {
+    "first": 76,
+    "second": 67,
+    "amount": -1
+  }, {
+    "first": 76,
+    "second": 71,
+    "amount": -1
+  }, {
+    "first": 76,
+    "second": 79,
+    "amount": -1
+  }, {
+    "first": 76,
+    "second": 81,
+    "amount": -1
+  }, {
+    "first": 76,
+    "second": 84,
+    "amount": -5
+  }, {
+    "first": 76,
+    "second": 85,
+    "amount": -1
+  }, {
+    "first": 76,
+    "second": 86,
+    "amount": -6
+  }, {
+    "first": 76,
+    "second": 87,
+    "amount": -4
+  }, {
+    "first": 76,
+    "second": 88,
+    "amount": 0
+  }, {
+    "first": 76,
+    "second": 89,
+    "amount": -7
+  }, {
+    "first": 79,
+    "second": 65,
+    "amount": -2
+  }, {
+    "first": 79,
+    "second": 84,
+    "amount": -2
+  }, {
+    "first": 79,
+    "second": 86,
+    "amount": -2
+  }, {
+    "first": 79,
+    "second": 87,
+    "amount": -1
+  }, {
+    "first": 79,
+    "second": 88,
+    "amount": -3
+  }, {
+    "first": 79,
+    "second": 89,
+    "amount": -3
+  }, {
+    "first": 79,
+    "second": 90,
+    "amount": 0
+  }, {
+    "first": 80,
+    "second": 65,
+    "amount": -4
+  }, {
+    "first": 80,
+    "second": 74,
+    "amount": -1
+  }, {
+    "first": 80,
+    "second": 86,
+    "amount": 0
+  }, {
+    "first": 80,
+    "second": 88,
+    "amount": -1
+  }, {
+    "first": 80,
+    "second": 89,
+    "amount": -1
+  }, {
+    "first": 80,
+    "second": 90,
+    "amount": 0
+  }, {
+    "first": 81,
+    "second": 65,
+    "amount": 0
+  }, {
+    "first": 81,
+    "second": 84,
+    "amount": -2
+  }, {
+    "first": 81,
+    "second": 86,
+    "amount": -2
+  }, {
+    "first": 81,
+    "second": 87,
+    "amount": -1
+  }, {
+    "first": 81,
+    "second": 88,
+    "amount": -1
+  }, {
+    "first": 81,
+    "second": 89,
+    "amount": -3
+  }, {
+    "first": 82,
+    "second": 65,
+    "amount": 0
+  }, {
+    "first": 82,
+    "second": 67,
+    "amount": 0
+  }, {
+    "first": 82,
+    "second": 71,
+    "amount": 0
+  }, {
+    "first": 82,
+    "second": 74,
+    "amount": 0
+  }, {
+    "first": 82,
+    "second": 79,
+    "amount": 0
+  }, {
+    "first": 82,
+    "second": 81,
+    "amount": 0
+  }, {
+    "first": 82,
+    "second": 83,
+    "amount": 0
+  }, {
+    "first": 82,
+    "second": 84,
+    "amount": -1
+  }, {
+    "first": 82,
+    "second": 85,
+    "amount": 0
+  }, {
+    "first": 82,
+    "second": 86,
+    "amount": -1
+  }, {
+    "first": 82,
+    "second": 87,
+    "amount": -1
+  }, {
+    "first": 82,
+    "second": 88,
+    "amount": 0
+  }, {
+    "first": 82,
+    "second": 89,
+    "amount": -2
+  }, {
+    "first": 83,
+    "second": 65,
+    "amount": 0
+  }, {
+    "first": 83,
+    "second": 84,
+    "amount": 0
+  }, {
+    "first": 83,
+    "second": 86,
+    "amount": -1
+  }, {
+    "first": 83,
+    "second": 87,
+    "amount": -1
+  }, {
+    "first": 83,
+    "second": 88,
+    "amount": -1
+  }, {
+    "first": 83,
+    "second": 89,
+    "amount": -1
+  }, {
+    "first": 84,
+    "second": 65,
+    "amount": -5
+  }, {
+    "first": 84,
+    "second": 67,
+    "amount": -2
+  }, {
+    "first": 84,
+    "second": 71,
+    "amount": -2
+  }, {
+    "first": 84,
+    "second": 74,
+    "amount": -5
+  }, {
+    "first": 84,
+    "second": 79,
+    "amount": -2
+  }, {
+    "first": 84,
+    "second": 81,
+    "amount": -2
+  }, {
+    "first": 84,
+    "second": 83,
+    "amount": 0
+  }, {
+    "first": 84,
+    "second": 86,
+    "amount": 1
+  }, {
+    "first": 84,
+    "second": 87,
+    "amount": 0
+  }, {
+    "first": 84,
+    "second": 88,
+    "amount": 1
+  }, {
+    "first": 84,
+    "second": 89,
+    "amount": 1
+  }, {
+    "first": 85,
+    "second": 65,
+    "amount": -2
+  }, {
+    "first": 85,
+    "second": 88,
+    "amount": 0
+  }, {
+    "first": 86,
+    "second": 65,
+    "amount": -6
+  }, {
+    "first": 86,
+    "second": 67,
+    "amount": -2
+  }, {
+    "first": 86,
+    "second": 71,
+    "amount": -2
+  }, {
+    "first": 86,
+    "second": 74,
+    "amount": -5
+  }, {
+    "first": 86,
+    "second": 79,
+    "amount": -2
+  }, {
+    "first": 86,
+    "second": 81,
+    "amount": -2
+  }, {
+    "first": 86,
+    "second": 83,
+    "amount": -1
+  }, {
+    "first": 86,
+    "second": 84,
+    "amount": 1
+  }, {
+    "first": 86,
+    "second": 86,
+    "amount": 1
+  }, {
+    "first": 86,
+    "second": 87,
+    "amount": 0
+  }, {
+    "first": 86,
+    "second": 88,
+    "amount": 0
+  }, {
+    "first": 86,
+    "second": 89,
+    "amount": 1
+  }, {
+    "first": 87,
+    "second": 65,
+    "amount": -5
+  }, {
+    "first": 87,
+    "second": 67,
+    "amount": -1
+  }, {
+    "first": 87,
+    "second": 71,
+    "amount": -1
+  }, {
+    "first": 87,
+    "second": 74,
+    "amount": -4
+  }, {
+    "first": 87,
+    "second": 79,
+    "amount": -1
+  }, {
+    "first": 87,
+    "second": 81,
+    "amount": -1
+  }, {
+    "first": 87,
+    "second": 83,
+    "amount": -1
+  }, {
+    "first": 87,
+    "second": 84,
+    "amount": 0
+  }, {
+    "first": 87,
+    "second": 86,
+    "amount": 0
+  }, {
+    "first": 87,
+    "second": 87,
+    "amount": 0
+  }, {
+    "first": 87,
+    "second": 88,
+    "amount": 0
+  }, {
+    "first": 87,
+    "second": 89,
+    "amount": 0
+  }, {
+    "first": 88,
+    "second": 65,
+    "amount": 0
+  }, {
+    "first": 88,
+    "second": 67,
+    "amount": -3
+  }, {
+    "first": 88,
+    "second": 71,
+    "amount": -3
+  }, {
+    "first": 88,
+    "second": 74,
+    "amount": 0
+  }, {
+    "first": 88,
+    "second": 79,
+    "amount": -3
+  }, {
+    "first": 88,
+    "second": 81,
+    "amount": -3
+  }, {
+    "first": 88,
+    "second": 83,
+    "amount": -2
+  }, {
+    "first": 88,
+    "second": 84,
+    "amount": 1
+  }, {
+    "first": 88,
+    "second": 85,
+    "amount": 0
+  }, {
+    "first": 88,
+    "second": 86,
+    "amount": 0
+  }, {
+    "first": 88,
+    "second": 87,
+    "amount": 0
+  }, {
+    "first": 88,
+    "second": 88,
+    "amount": 0
+  }, {
+    "first": 88,
+    "second": 89,
+    "amount": 0
+  }, {
+    "first": 89,
+    "second": 65,
+    "amount": -7
+  }, {
+    "first": 89,
+    "second": 67,
+    "amount": -3
+  }, {
+    "first": 89,
+    "second": 71,
+    "amount": -3
+  }, {
+    "first": 89,
+    "second": 74,
+    "amount": -7
+  }, {
+    "first": 89,
+    "second": 79,
+    "amount": -3
+  }, {
+    "first": 89,
+    "second": 81,
+    "amount": -3
+  }, {
+    "first": 89,
+    "second": 83,
+    "amount": -2
+  }, {
+    "first": 89,
+    "second": 84,
+    "amount": 1
+  }, {
+    "first": 89,
+    "second": 86,
+    "amount": 1
+  }, {
+    "first": 89,
+    "second": 87,
+    "amount": 0
+  }, {
+    "first": 89,
+    "second": 88,
+    "amount": 0
+  }, {
+    "first": 89,
+    "second": 89,
+    "amount": 0
+  }, {
+    "first": 90,
+    "second": 65,
+    "amount": 1
+  }, {
+    "first": 90,
+    "second": 67,
+    "amount": -1
+  }, {
+    "first": 90,
+    "second": 71,
+    "amount": -1
+  }, {
+    "first": 90,
+    "second": 74,
+    "amount": 0
+  }, {
+    "first": 90,
+    "second": 79,
+    "amount": -1
+  }, {
+    "first": 90,
+    "second": 81,
+    "amount": -1
+  }]
+};
+},{}],"font/GmarketSansTTFBold.png":[function(require,module,exports) {
+module.exports = "/GmarketSansTTFBold.909969a7.png";
+},{}],"js/app.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -50284,6 +51402,8 @@ exports.default = void 0;
 
 var THREE = _interopRequireWildcard(require("three"));
 
+var _threeMsdfText = require("three-msdf-text");
+
 var _OrbitControls = require("three/examples/jsm/controls/OrbitControls.js");
 
 var _fragment = _interopRequireDefault(require("./shader/fragment.glsl"));
@@ -50292,7 +51412,13 @@ var _vertex = _interopRequireDefault(require("./shader/vertex.glsl"));
 
 var dat = _interopRequireWildcard(require("dat.gui"));
 
+var _virtualScroll = _interopRequireDefault(require("virtual-scroll"));
+
 var _gsap = _interopRequireDefault(require("gsap"));
+
+var _GmarketSansTTFBoldMsdf = _interopRequireDefault(require("../font/GmarketSansTTFBold-msdf.json"));
+
+var _GmarketSansTTFBold = _interopRequireDefault(require("../font/GmarketSansTTFBold.png"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -50300,33 +51426,89 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "functio
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
+var TEXTS = ["TRANDY", "FASHION", "BRAND", "WEB", "ATTRACTIVE DESIGN", "GOOD EXPERIENCE", "GAMSUNG", "NICE", "CHOOSE US", "MUNGCHI AGENCY", "TRANDY", "FASHION", "BRAND", "WEB", "ATTRACTIVE DESIGN", "GOOD EXPERIENCE", "GAMSUNG", "NICE", "CHOOSE US", "MUNGCHI AGENCY", "TRANDY", "FASHION", "BRAND", "WEB", "ATTRACTIVE DESIGN", "GOOD EXPERIENCE", "GAMSUNG", "NICE", "CHOOSE US", "MUNGCHI AGENCY", "TRANDY", "FASHION", "BRAND", "WEB", "ATTRACTIVE DESIGN", "GOOD EXPERIENCE", "GAMSUNG", "NICE", "CHOOSE US", "MUNGCHI AGENCY", "TRANDY", "FASHION", "BRAND", "WEB", "ATTRACTIVE DESIGN", "GOOD EXPERIENCE", "GAMSUNG", "NICE", "CHOOSE US", "MUNGCHI AGENCY", "TRANDY", "FASHION", "BRAND", "WEB", "ATTRACTIVE DESIGN", "GOOD EXPERIENCE", "GAMSUNG", "NICE", "CHOOSE US", "MUNGCHI AGENCY"];
+
 var Sketch = /*#__PURE__*/function () {
   function Sketch(options) {
+    var _this = this;
+
     _classCallCheck(this, Sketch);
 
     this.scene = new THREE.Scene();
+    this.sceneCopy = new THREE.Scene();
+    this.group = new THREE.Group();
+    this.groupCopy = new THREE.Group();
+    this.sceneCopy.add(this.groupCopy);
+    this.groupPlane = new THREE.Group();
+    this.scene.add(this.group);
+    this.scene.add(this.groupPlane);
+    this.textures = _toConsumableArray(document.querySelectorAll(".js-texture"));
+    console.log(this.textures);
+    this.textures = this.textures.map(function (t) {
+      return new THREE.TextureLoader().load(t.src);
+    });
     this.container = options.dom;
     this.width = this.container.offsetWidth;
     this.height = this.container.offsetHeight;
-    this.renderer = new THREE.WebGLRenderer();
+    this.renderer = new THREE.WebGLRenderer({
+      antialias: true,
+      alpha: true
+    });
+    this.renderer.autoClear = false;
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     this.renderer.setSize(this.width, this.height);
     this.renderer.setClearColor(0xeeeeee, 1);
     this.container.appendChild(this.renderer.domElement);
-    this.camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.001, 1000); // var frustumSize = 10;
+    this.position = 0;
+    this.speed = 0;
+    this.targetSpeed = 0;
+    this.scroller = new _virtualScroll.default();
+    this.scroller.on(function (event) {
+      // wrapper.style.transform = `translateY(${event.y}px)`;
+      _this.position = event.y / 4000;
+      _this.speed = event.deltaY / 2000;
+    });
+    this.camera = new THREE.PerspectiveCamera(70, this.width / this.height, 0.01, 100); // var frustumSize = 10;
     // var aspect = window.innerWidth / window.innerHeight;
     // this.camera = new THREE.OrthographicCamera( frustumSize * aspect / - 2, frustumSize * aspect / 2, frustumSize / 2, frustumSize / - 2, -1000, 1000 );
 
-    this.camera.position.set(0, 0, 2);
-    this.controls = new _OrbitControls.OrbitControls(this.camera, this.renderer.domElement);
+    this.camera.position.set(0, 0, 2); // this.controls = new OrbitControls(this.camera, this.renderer.domElement);
+
     this.time = 0;
     this.isPlaying = true;
+    this.addTexts();
     this.addObjects();
     this.resize();
     this.render();
@@ -50358,10 +51540,63 @@ var Sketch = /*#__PURE__*/function () {
       this.camera.updateProjectionMatrix();
     }
   }, {
+    key: "addTexts",
+    value: function addTexts() {
+      var _this2 = this;
+
+      this.material = new THREE.ShaderMaterial({
+        side: THREE.DoubleSide,
+        transparent: true,
+        defines: {
+          IS_SMALL: false
+        },
+        extensions: {
+          derivatives: true
+        },
+        uniforms: _objectSpread(_objectSpread(_objectSpread({
+          uSpeed: {
+            value: 0
+          }
+        }, _threeMsdfText.uniforms.common), _threeMsdfText.uniforms.rendering), _threeMsdfText.uniforms.strokes),
+        vertexShader: "\n          // Attribute\n          #include <three_msdf_attributes>\n  \n          // Varyings\n          #include <three_msdf_varyings>\n          mat4 rotationMatrix(vec3 axis, float angle) {\n            axis = normalize(axis);\n            float s = sin(angle);\n            float c = cos(angle);\n            float oc = 1.0 - c;\n            \n            return mat4(oc * axis.x * axis.x + c,           oc * axis.x * axis.y - axis.z * s,  oc * axis.z * axis.x + axis.y * s,  0.0,\n                        oc * axis.x * axis.y + axis.z * s,  oc * axis.y * axis.y + c,           oc * axis.y * axis.z - axis.x * s,  0.0,\n                        oc * axis.z * axis.x - axis.y * s,  oc * axis.y * axis.z + axis.x * s,  oc * axis.z * axis.z + c,           0.0,\n                        0.0,                                0.0,                                0.0,                                1.0);\n        }\n        \n        vec3 rotate(vec3 v, vec3 axis, float angle) {\n          mat4 m = rotationMatrix(axis, angle);\n          return (m * vec4(v, 1.0)).xyz;\n        }\n\n        uniform float uSpeed;\n\n          void main() {\n\n            // Varyings\n            vUv = uv;\n            vLayoutUv = layoutUv;\n            vNormal = normal;\n            \n            vLineIndex = lineIndex;\n            \n            vLineLettersTotal = lineLettersTotal;\n            vLineLetterIndex = lineLetterIndex;\n            \n            vLineWordsTotal = lineWordsTotal;\n            vLineWordIndex = lineWordIndex;\n            \n            vWordIndex = wordIndex;\n            \n            vLetterIndex = letterIndex;\n            // Output\n            vec3 newpos = position;\n            float xx = position.x*0.003;\n            newpos = rotate(newpos, vec3(0., 0., 1.), uSpeed*xx*xx);\n\n            vec4 mvPosition = vec4(newpos, 1.0);\n            mvPosition = modelViewMatrix * mvPosition;\n            gl_Position = projectionMatrix * mvPosition;\n            \n            vViewPosition = -mvPosition.xyz;\n          }\n      ",
+        fragmentShader: "\n          // Varyings\n          #include <three_msdf_varyings>\n  \n          // Uniforms\n          #include <three_msdf_common_uniforms>\n          #include <three_msdf_strokes_uniforms>\n  \n          // Utils\n          #include <three_msdf_median>\n          \n          void main() {\n              // Common\n              #include <three_msdf_common>\n  \n              // Strokes\n              #include <three_msdf_strokes>\n  \n              // Alpha Test\n              #include <three_msdf_alpha_test>\n  \n              // Outputs\n              #include <three_msdf_strokes_output>\n\n              gl_FragColor = vec4(1.,0.,0.,1.);\n          }\n      "
+      });
+      Promise.all([loadFontAtlas(_GmarketSansTTFBold.default)]).then(function (_ref) {
+        var _ref2 = _slicedToArray(_ref, 1),
+            atlas = _ref2[0];
+
+        _this2.size = 0.2;
+        _this2.material.uniforms.uMap.value = atlas;
+        TEXTS.forEach(function (TEXT, i) {
+          var geometry = new _threeMsdfText.MSDFTextGeometry({
+            text: TEXT.toUpperCase(),
+            font: _GmarketSansTTFBoldMsdf.default
+          });
+          var mesh = new THREE.Mesh(geometry, _this2.material);
+          var s = 0.005;
+          mesh.scale.set(s, -s, s);
+          mesh.position.x = -0.9;
+          mesh.position.y = _this2.size * i;
+
+          _this2.group.add(mesh);
+
+          _this2.groupCopy.add(mesh.clone());
+        });
+      });
+
+      function loadFontAtlas(path) {
+        var promise = new Promise(function (resolve, reject) {
+          var loader = new THREE.TextureLoader();
+          loader.load(path, resolve);
+        });
+        return promise;
+      }
+    }
+  }, {
     key: "addObjects",
     value: function addObjects() {
       var that = this;
-      this.material = new THREE.ShaderMaterial({
+      this.planematerial = new THREE.ShaderMaterial({
         extensions: {
           derivatives: "#extension GL_OES_standard_derivatives : enable"
         },
@@ -50369,6 +51604,9 @@ var Sketch = /*#__PURE__*/function () {
         uniforms: {
           time: {
             value: 0
+          },
+          uTexture: {
+            value: this.textures[0]
           },
           resolution: {
             value: new THREE.Vector4()
@@ -50379,9 +51617,29 @@ var Sketch = /*#__PURE__*/function () {
         vertexShader: _vertex.default,
         fragmentShader: _fragment.default
       });
-      this.geometry = new THREE.PlaneGeometry(1, 1, 1, 1);
-      this.plane = new THREE.Mesh(this.geometry, this.material);
-      this.scene.add(this.plane);
+      this.geometry = new THREE.PlaneGeometry(1.77 / 3, 1 / 3, 30, 30).translate(0, 0, 1);
+      var pos = this.geometry.attributes.position.array;
+      var newpos = [];
+      var r = 1.2;
+
+      for (var i = 0; i < pos.length; i += 3) {
+        var x = pos[i];
+        var y = pos[i + 1];
+        var z = pos[i + 2];
+        var xz = new THREE.Vector2(x, z).normalize().multiplyScalar(r);
+        var xyz = new THREE.Vector3(x, y, z).normalize().multiplyScalar(r); // newpos.push(xz.x, y, xz.y);
+
+        newpos.push(xyz.x, xyz.y, xyz.z);
+      }
+
+      var testmesh = new THREE.Mesh(new THREE.SphereGeometry(r, 32, 32), new THREE.MeshBasicMaterial({
+        wireframe: true,
+        color: 0xff0000
+      }));
+      this.scene.add(testmesh);
+      this.geometry.setAttribute("position", new THREE.Float32BufferAttribute(newpos, 3));
+      this.plane = new THREE.Mesh(this.geometry, this.planematerial);
+      this.groupPlane.add(this.plane);
     }
   }, {
     key: "stop",
@@ -50397,13 +51655,36 @@ var Sketch = /*#__PURE__*/function () {
       }
     }
   }, {
+    key: "updateTexture",
+    value: function updateTexture() {
+      var index = Math.round(this.position + 10000) % this.textures.length;
+      this.planematerial.uniforms.uTexture.value = this.textures[index];
+      this.groupCopy.children.forEach(function (mesh, i) {
+        if (i !== index) {
+          mesh.visible = false;
+        } else {
+          mesh.visible = true;
+        }
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       if (!this.isPlaying) return;
       this.time += 0.05;
-      this.material.uniforms.time.value = this.time;
+      this.speed *= 0.9;
+      this.updateTexture();
+      this.targetSpeed += (this.speed - this.targetSpeed) * 0.1;
+      this.group.position.y = -this.position * this.size - 0.05;
+      this.groupCopy.position.y = -this.position * this.size - 0.05;
+      this.plane.rotation.y = this.position * 2 * Math.PI;
+      this.groupPlane.rotation.z = 0.2 * Math.sin(this.position * 0.5);
+      this.material.uniforms.uSpeed.value = this.targetSpeed; // this.material.uniforms.time.value = this.time;
+
       requestAnimationFrame(this.render.bind(this));
       this.renderer.render(this.scene, this.camera);
+      this.renderer.clearDepth();
+      this.renderer.render(this.sceneCopy, this.camera);
     }
   }]);
 
@@ -50414,7 +51695,7 @@ exports.default = Sketch;
 new Sketch({
   dom: document.getElementById("container")
 });
-},{"three":"node_modules/three/build/three.module.js","three/examples/jsm/controls/OrbitControls.js":"node_modules/three/examples/jsm/controls/OrbitControls.js","./shader/fragment.glsl":"js/shader/fragment.glsl","./shader/vertex.glsl":"js/shader/vertex.glsl","dat.gui":"node_modules/dat.gui/build/dat.gui.module.js","gsap":"node_modules/gsap/index.js"}],"../../.nvm/versions/node/v16.14.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"three":"node_modules/three/build/three.module.js","three-msdf-text":"node_modules/three-msdf-text/build/bundle.js","three/examples/jsm/controls/OrbitControls.js":"node_modules/three/examples/jsm/controls/OrbitControls.js","./shader/fragment.glsl":"js/shader/fragment.glsl","./shader/vertex.glsl":"js/shader/vertex.glsl","dat.gui":"node_modules/dat.gui/build/dat.gui.module.js","virtual-scroll":"node_modules/virtual-scroll/lib/virtualscroll.js","gsap":"node_modules/gsap/index.js","../font/GmarketSansTTFBold-msdf.json":"font/GmarketSansTTFBold-msdf.json","../font/GmarketSansTTFBold.png":"font/GmarketSansTTFBold.png"}],"../../.nvm/versions/node/v16.14.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -50442,7 +51723,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57965" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49539" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

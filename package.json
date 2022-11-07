@@ -1,8 +1,11 @@
 {
   "dependencies": {
+    "@parcel/config-default": "^2.7.0",
     "dat.gui": "^0.7.9",
     "gsap": "^3.11.3",
-    "three": "^0.145.0"
+    "three": "^0.145.0",
+    "three-msdf-text": "github:leochocolat/three-msdf-text",
+    "virtual-scroll": "^2.2.1"
   },
   "devDependencies": {
     "glslify-bundle": "^5.1.1",
